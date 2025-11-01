@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* //Only for title edit -> isse hatana hai */
+h6 {
+  /* layout & sizing */
+  max-width: 560px;
+  margin: 40px auto;           /* center horizontally with top spacing */
+  padding: 22px 28px;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* typography */
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+
+  /* background + glassy panel */
+  background: linear-gradient(135deg, rgba(10,130,80,0.95), rgba(20,170,100,0.95));
+  border-radius: 14px;
+
+  /* stylish border effect using outline + inner stroke */
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.06);
+  box-shadow:
+    0 8px 30px rgba(10, 100, 60, 0.25),   /* soft deep shadow */
+    inset 0 1px 0 rgba(255,255,255,0.06);  /* subtle inner highlight */
+
+  /* subtle animated glow on hover */
+  transition: transform 180ms ease, box-shadow 220ms ease;
+  transform: translateY(0);
+}
+
+h2 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #28282b;
+  background-color: #2d9c96;
+  /* border: 4px solid #222c4c; */
+  border-radius: 10px;
+  padding: 12px 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+h3 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #28282b;
+  padding: 12px 20px;
+  text-align: center;
+  background-color: #5eaaa7;
+  border-radius: 10px;
+  padding: 10px 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+/* double-border glow: pseudo element */
+#csvEdit::before {
+  content: "";
+  position: absolute;
+  inset: -4px; /* expands outside the box to form outer border */
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  -webkit-mask: 
+    linear-gradient(#000 0 0) content-box, 
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* hover interaction */
+#csvEdit:hover{
+  transform: translateY(-6px);
+  box-shadow:
+    0 18px 40px rgba(10, 120, 70, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* small responsive tweak */
+@media (max-width: 480px) {
+  #csvEdit {
+    margin: 20px;
+    font-size: 18px;
+    padding: 18px 20px;
+  }
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a2d0e8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.upload-section {
+    text-align: center;
+    background-color: rgba(234, 236, 198, 0.889);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.upload-section h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="file"] {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color:  #4c89d0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #091a3f;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.chart-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.insights-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#insights {
+    margin-top: 15px;
+}
+
+.insight-item {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f8f9fa;
+    border-left: 4px solid #4CAF50;
+    border-radius: 4px;
+}
